@@ -3,35 +3,32 @@ import { Link } from "gatsby";
 
 function Welcome() {
   return (
-    <section className="max-w-lg">
+    
+    <section className="max-w-lg m-auto text-justify">
+      
       <h1 className="font-bold tracking-tight text-2xl my-8 text-gray-900">
-        Hey there! Welcome to Enlight fellowship starter project.
+        Hey there! Thanks for this Enlight fellowship starter project.
       </h1>
 
       <p className="text-xl text-gray-700 pb-2">
-        Take a look at pages/index.js. Within the index page component (the page
-        you are looking at right now), there is a component imported from
-        ../components/welcome.js. This is where this text is located! Feel free
-        to edit the welcome.js component and play around to get a feel for the project.{" "}
+        I learned a lot about react.js and data visualisation through this hands-on project. 
+        I was able to successfully fetch data with the useEffect hook and access the data according to the stats I wanted.
+        On top of this, I used chart.js to create a beautiful bar graph displaying the completed milestones.
+        Since the order of the milestones is chronological, this accurately reflects
+        the level of participation of cohort members over the course of two weeks. {" "}
       </p>
 
       <p className="text-xl text-gray-700 py-2">
-        Here is a link to another{" "}
-        <Link className="text-blue-600" to="pagetwo">
-          page
+        Here is a link to the{" "}
+        <Link className="text-red-600" to="pagetwo">
+          Completion Data
         </Link>{" "}
-        to show you how multiple pages in Gatsby work.
-      </p>
-      <p className="text-xl text-gray-700 py-2">
-        When you build your project, you will want to make sure to create
-        components in the components folder and import them into index.js to
-        display them on the page, just like this component. For example, you can
-        create a table.js component or a completionStat.js component!
+        to show you the activity of cohort members.
       </p>
 
       <p className="text-xl text-gray-700 py-2">
-        Please reach out to Samay via Discord or email (samay@enlight.nyc) if
-        you have any questions or run into any issues. We are here to help.
+        Please reach out to Atul via Discord or email (atulgera@umich.edu) if
+        you have any questions or run into any issues. I cannot wait to learn more by doing!
       </p>
     </section>
   );

@@ -1,33 +1,36 @@
-import React, { useState, useEffect } from 'react';
-
+import React, {useMemo} from 'react';
+import Completions from "./completions.json";
 function Table() {
 
-    const [data,setData] = useState([]);
-    const [isLoading,setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
+    const data = useMemo(() => Completions,[])
+    // const [data,setData] = useState([]);
+    // const [isLoading,setIsLoading] = useState(false);
+    // const [error, setError] = useState(null);
     
 
-    useEffect(() =>{
-      fetch("https://enlight.nyc/completions.json")
-          .then((response) => response.json())
-          .then(
-              (data) => {
-                  setData(data.completions);
-                  setIsLoading(true);
-              },
+    // useEffect(() =>{
+    //   fetch("/completions.json")
+    //   //fetch("https://enlight.nyc/completions.json",{mode:"no-cors"})
+        
+    //       .then((response) => response.json())
+    //       .then(
+    //           (data) => {
+    //               setData(data.completions);
+    //               setIsLoading(true);
+    //           },
 
-              (error) => {
-                  setIsLoading(true);
-                  setError(error);
-              }
-          )   
-    },[])
+    //           (error) => {
+    //               setIsLoading(true);
+    //               setError(error);
+    //           }
+    //       )   
+    // },[])
 
-    if (error) {
-        return <div>Error: {error.message}</div>;
-      } else if (!isLoading) {
-        return <div>Loading...</div>;
-      } else {
+    // if (error) {
+    //     return <div>Error: {error.message}</div>;
+    //   } else if (!isLoading) {
+    //     return <div>Loading...</div>;
+    //   } else {
         
           return(
             <div className="border-b-4 border-t-4 border-blue-600 p-4 text-lg">
@@ -43,7 +46,7 @@ function Table() {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map(item=> (
+                  {data.completions.map(item=> (
                     <tr className="p-4 divide-y divide-green-500 divide-dashed divide-x divide-green-500 divide-dashed" key={item.name}>
                       <td>{item.name}</td>
                       <td>{item.username}</td>
@@ -61,7 +64,7 @@ function Table() {
             </div>
           );
         }
-      }
+      // }
       
 
 export default Table;
